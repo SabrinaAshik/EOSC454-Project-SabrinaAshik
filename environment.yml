@@ -7,7 +7,7 @@ dependencies:
   - numpy
   - scipy
   - matplotlib
-  - SimPEG
+  - SimPEG = 0.20.0
   - ipywidgets
   - discretize
   - pymatsolver
