@@ -9,10 +9,10 @@ This project focuses on conducting Frequency Domain Electromagnetic (FDEM) Data 
  FDEM is a geophysical method widely used in hydrogeology, mineral exploration, and environmental studies. The inversion process aims to estimate the subsurface electrical conductivity distribution by fitting observed electromagnetic data to a forward model.
 
 ## Objectives
-### Starting in 1D:
-- What does a sounding look like on the far left vs far right end of the model?
-### Moving on to 3D:
-- Run a 3D forward simulation to generate data, and then invert each sounding independently in 1D. 
+### Starting in 1D: What does a sounding look like on the far left vs far right end of the model?
+- The notebooks in the 1d_files folder explores the 1D forward simulation and inversion for the soundings on the far left and far right.
+### Moving on to 3D: Run a 3D forward simulation to generate data, and then invert each sounding independently in 1D.
+- The notebooks in the 3d_files folder currently contains the 3D forward simulation file.
 
 ## Installation
 
