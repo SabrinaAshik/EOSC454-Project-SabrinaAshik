@@ -6,7 +6,9 @@ This project focuses on conducting Frequency Domain Electromagnetic (FDEM) Data 
 
 <img width="245" alt="image" src="https://github.com/SabrinaAshik/EOSC454-Project-SabrinaAshik/assets/70414346/aa39796a-020f-413b-8bba-9faf54f8a7c0">
 
- FDEM is a geophysical method widely used in hydrogeology, mineral exploration, and environmental studies. The inversion process aims to estimate the subsurface electrical conductivity distribution by fitting observed electromagnetic data to a forward model.
+(De Groot‐Hedlin, C., & Constable, S. (2004). Inversion of magnetotelluric data for 2D structure with sharp resistivity contrasts. Geophysics, 69(1), 78–86. https://doi.org/10.1190/1.1649377)
+
+FDEM is a geophysical method widely used in hydrogeology, mineral exploration, and environmental studies. The inversion process aims to estimate the subsurface electrical conductivity distribution by fitting observed electromagnetic data to a forward model.
 
 ## Objectives
 ### Starting in 1D: What does a sounding look like on the far left vs far right end of the model?
