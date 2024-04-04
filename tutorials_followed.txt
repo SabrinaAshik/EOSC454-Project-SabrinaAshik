@@ -5,3 +5,6 @@ https://simpeg.xyz/user-tutorials/inv-fdem-1d
 1D Single Sounding Notebooks:
 https://docs.simpeg.xyz/content/tutorials/07-fdem/plot_fwd_1_em1dfm.html
 https://docs.simpeg.xyz/content/tutorials/07-fdem/plot_inv_1_em1dfm.html
+
+3D Forward Simulation Notebook:
+https://docs.simpeg.xyz/content/tutorials/07-fdem/plot_fwd_2_fem_cyl.html
