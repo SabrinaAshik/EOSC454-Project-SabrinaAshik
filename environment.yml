@@ -2,12 +2,11 @@ name: eosc454
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
+  - python=3.11.7
   - pytest
   - numpy
   - scipy
-  - matplotlib
+  - matplotlib = 3.8.0
   - SimPEG = 0.20.0
-  - ipywidgets
   - discretize
   - pymatsolver
