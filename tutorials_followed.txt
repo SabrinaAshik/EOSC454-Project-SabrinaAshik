@@ -8,3 +8,6 @@ https://docs.simpeg.xyz/content/tutorials/07-fdem/plot_inv_1_em1dfm.html
 
 3D Forward Simulation Notebook:
 https://docs.simpeg.xyz/content/tutorials/07-fdem/plot_fwd_2_fem_cyl.html
+
+2D Inversion of Loop-Loop EM Data:
+https://docs.simpeg.xyz/content/examples/05-fdem/plot_inv_fdem_loop_loop_2Dinversion.html
