@@ -24,7 +24,7 @@ def define_inverse_problem_1DLayered(simulation_L2, data_object, regularization_
     inv_prob_L2 = inverse_problem.BaseInvProblem(dmis_L2, reg_L2, opt_L2)
     
     update_jacobi = directives.UpdatePreconditioner(update_every_iteration=True)
-    starting_beta = directives.BetaEstimate_ByEig(beta0_ratio=5)
+    starting_beta = directives.BetaEstimate_ByEig(beta0_ratio=1e1)
     beta_schedule = directives.BetaSchedule(coolingFactor=2.0, coolingRate=3)
     target_misfit = directives.TargetMisfit(chifact=1.0)
 
