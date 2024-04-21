@@ -13,13 +13,17 @@ FDEM is a geophysical method widely used in hydrogeology, mineral exploration, a
 ## Objectives
 ### Starting in 1D: What does a sounding look like on the far left vs far right end of the model?
 - The notebooks in the 1d-notbook folder explores the 1D forward simulation and inversion for the soundings on the far left and far right.
-### Moving on to 3D: Run a 3D forward simulation to generate data, and then invert each sounding independently in 1D
+### Moving on to 3D: Collect 1D data from a 3D model and then invert each sounding independently in 1D to recover a 3D model
 - The notebooks in the 3d-notbook folder currently contains the 3D forward simulation file.
-- Contains a forward simulation file which generates both 1d and 3d data.
-- Contains the following 1d inversion files: 1d-inversion with 1d data and 1d-inversion with 3d data
-- The files in this folder is still work in progress.
-### Stresh Goal: Higher dimension inversion
-- Found in 3d-notebook: 2d inversion with 3d data
+- Contains a forward simulation file which generates 1d from a 3D model.
+- Contains an inversion file which inverts all 1d data using Weighted Least-Squares method.
+- (WORK IN PROGRESS) Contains an inversion file which inverts all 1d data using Iteratively Re-weighted Least-Squares method.
+
+## Other files/folders:
+- (WORK IN PROGRESS) inversion_toolkit: this folder contains two scripts: model_functions.py, which contains functions helpful for creating models, and inversion_fucntiosn, which contains functions helpful for inversions.
+- (WORK IN PROGRESS) test_model.py: tests the functions included in model_functions.py
+- tutorials_folowed.txt: contains URLs of the SimPEG tutorial followed.
+
 
 ## Installation
 
