@@ -67,7 +67,27 @@ def get_1d_model(x_position, m_true, inversion_mesh_2d):
     return layer_thicknesses, log_resistivity_map, log_resistivity_model, z_values_model
 
 def generate_survey(x_position, frequencies, moment, sep=10):
+    """
+    Function for generating frequency domain PointMagneticFluxDensitySecondary survey 
+    with fixed coil seperation and multiple frequencies, at a specified x position.
 
+    Parameters
+    ----------
+
+    x_position: int, float
+        specified x-position on the 2D model
+
+    frequencies: np.ndarray
+        lsit of frequencies for the survey
+
+    moment: int, float
+        Magnetic dipole moment
+
+    Returns
+    -------
+    survey: SimPEG.electromagnetics.frequency_domain.survey.Survey object 
+        Frequency domain electromagnetic survey
+    """
     # Defining transmitter locations
     xtx, ytx, ztx = np.meshgrid(x_position, [0], [30])
     source_locations = np.c_[mkvc(xtx), mkvc(ytx), mkvc(ztx)]

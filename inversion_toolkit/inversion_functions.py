@@ -10,9 +10,26 @@ from SimPEG import (
 )
 
 def define_inverse_problem_1DLayered(simulation_L2, data_object, regularization_mesh, reference_resistivity_model):
-    # Define the data misfit. Here the data misfit is the L2 norm of the weighted
-    # residual between the observed data and the data predicted for a given model.
-    # The weighting is defined by the reciprocal of the uncertainties.
+    """
+    Defines the inverse problem for 1D layered earth 
+    with parameters selected for Weighted Least Square Inversion.
+
+    Parameters
+    ----------
+
+    simulation_L2: SimPEG.electromagnetics.frequency_domain.simulation_1d.Simulation1DLayered
+
+    data_object: SimPEG.data.Data
+
+    regularization_mesh:TensorMesh
+    
+    reference_resistivity_model: ndarray
+
+    Returns
+    -------
+    inv_L2: SimPEG.inversion.BaseInversion
+        
+    """
     dmis_L2 = data_misfit.L2DataMisfit(simulation=simulation_L2, data=data_object)
     reg_L2 = regularization.WeightedLeastSquares(
     regularization_mesh,
@@ -40,6 +57,25 @@ def define_inverse_problem_1DLayered(simulation_L2, data_object, regularization_
     return inv_L2
 
 def define_inverse_problem_1DLayered_irls(simulation_irls, data_object, regularization_mesh, reference_resistivity_model):
+    '''
+    Defines the inverse problem for 1D layered earth 
+    with parameters selected for Iteratively Re-Weighted Least Square Inversion.
+
+    Parameters
+    ----------
+
+    simulation_irls: SimPEG.electromagnetics.frequency_domain.simulation_1d.Simulation1DLayered
+
+    data_object: SimPEG.data.Data
+
+    regularization_mesh:TensorMesh
+    
+    reference_resistivity_model: ndarray
+
+    Returns
+    -------
+    inv_irls: SimPEG.inversion.BaseInversion
+    '''
     dmis_irls = data_misfit.L2DataMisfit(simulation=simulation_irls, data=data_object)
     reg_irls = regularization.Sparse(
     regularization_mesh,
@@ -71,6 +107,22 @@ def define_inverse_problem_1DLayered_irls(simulation_irls, data_object, regulari
     return inv_irls
 
 def get_regularization_mesh_and_models(estimated_resistivity):
+    '''
+    Defines the regularization mesh and models for Weighted Least Square Inversion.
+
+    Parameters
+    ----------
+
+    estimated_resistivity: int, float
+
+    Returns
+    -------
+    regularization_mesh: TensorMesh
+
+    layer_thicknesses: list
+
+    starting_model: ndarray
+    '''
     depth_min = 50  # top layer thickness
     depth_max = 5000.0  # depth to lowest layer
     geometric_factor = 1.2  # rate of thickness increase
@@ -94,6 +146,22 @@ def get_regularization_mesh_and_models(estimated_resistivity):
     return regularization_mesh, layer_thicknesses, starting_model
 
 def get_regularization_mesh_and_models_irls(estimated_resistivity):
+    '''
+    Defines the regularization mesh and models for Iteratively Re-Weighted Least Square Inversion.
+
+    Parameters
+    ----------
+
+    estimated_resistivity: int, float
+
+    Returns
+    -------
+    regularization_mesh: TensorMesh
+
+    layer_thicknesses: list
+
+    starting_model: ndarray
+    '''
     depth_min = 50  # top layer thickness
     depth_max = 5000.0  # depth to lowest layer
     geometric_factor = 1.5  # rate of thickness increase
@@ -117,6 +185,23 @@ def get_regularization_mesh_and_models_irls(estimated_resistivity):
     return regularization_mesh_irls, layer_thicknesses_irls, starting_model
 
 def get_dobs_from_1d_data(imported_1d_data, location_index):
+    '''
+    acquires the observed data from a imported dataset at the specified location.
+
+    Parameters
+    ----------
+
+    imported_1d_data: ndarray
+        data imported from the data folder
+    
+    location_index: int
+        index of the x-position in the x_positions array
+
+    Returns
+    -------
+    dobs: ndarray
+        observed data
+    '''
     dobs_real = imported_1d_data[:, 1::2].T
     dobs_imag = imported_1d_data[:, 2::2].T
     bz_real = dobs_real[location_index]
