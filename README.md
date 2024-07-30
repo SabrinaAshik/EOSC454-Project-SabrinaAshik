@@ -1,4 +1,4 @@
-# EOSC 454 Final Project: Frequncy Domain Electromagnetic Data Inversion of Multi-Layered Model
+# EOSC 454 Final Project: Frequency Domain Electromagnetic Data Inversion of Multi-Layered Model
 
 ## Description
 
